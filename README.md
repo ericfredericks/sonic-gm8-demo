@@ -4,3 +4,6 @@
 Video --> https://i.gyazo.com/928e8eac376c7f236a98faf75c593769.mp4
 <br>
 Invaluable resource --> http://info.sonicretro.org/Sonic_Physics_Guide
+
+Press 'Z' to jump
+Use the arrow keys to run around
