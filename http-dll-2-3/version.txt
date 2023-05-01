@@ -1,0 +1,43 @@
+Http Dll 2.3 release 6
+
+--------------------------------------------------
+
+2.3 release 6
+- fixed incorrect help string for socket_connect in GM Studio extension
+
+2.3 release 5
+- fixed bug in buffer_write_hex (regression from 2.3 release 3)
+
+2.3 release 4
+- removed state_shutdown: socket_shut_down now sets an internal flag, the state stays the same, this means socket_shut_down can now be called in states other than state_connected (the numbers for other states stay the same for backward compatibility)
+- the socket isn't destroyed anymore when the other side shuts down, this means you can still write data in state_closed (important for HTTP servers)
+- HTTP requests now wait until the server closes the connection before shutting down the socket (http://stackoverflow.com/questions/8855804/http-shutdown-socket-for-writing-after-sending-the-request)
+
+2.3 release 3
+- added buffer_read_base64 and buffer_write_base64
+- added httprequest_urldecode
+- some internal changes
+
+2.3 release 2
+- added argument to listeningsocket_start_listening to create a local listening socket (which doesn't accept external connections, avoiding firewall warnings).
+
+2.3 release 1
+- added RC4 encryption
+- added zlib compression
+- added functions to read part of a file and append to a file
+
+The changes below are not 100% accurate. The list is based on old forum posts.
+
+2.2
+- added UDP functions
+- split socket_update into socket_update_read and socket_update_write
+
+2.1
+- changed some function names
+- functions are now more tolerant to programmer errors
+- new reset functions for http requests and sockets
+- new data type (intv/uintv) which is now used by the message system, making this version incompatible with previous versions
+- added SHA-1
+
+2.0
+- everything was rewritten from scratch, there are too many differences with Http Dll 1 to name them.
